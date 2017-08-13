@@ -1,0 +1,41 @@
+{
+	"name": "replace-buffer",
+	"version": "0.0.0",
+	"description": "Replace matches in a Buffer",
+	"license": "MIT",
+	"repository": "kevva/replace-buffer",
+	"author": {
+		"name": "Kevin Mårtensson",
+		"email": "kevinmartensson@gmail.com",
+		"url": "github.com/kevva"
+	},
+	"engines": {
+		"node": ">=4"
+	},
+	"scripts": {
+		"test": "xo && ava"
+	},
+	"files": [
+		"index.js"
+	],
+	"keywords": [
+		"all",
+		"buffer",
+		"global",
+		"many",
+		"match",
+		"matches",
+		"modify",
+		"multiple",
+		"needle",
+		"replace",
+		"replacement",
+		"replacer",
+		"search",
+		"text"
+	],
+	"devDependencies": {
+		"ava": "*",
+		"xo": "*"
+	}
+}
