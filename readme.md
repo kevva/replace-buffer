@@ -24,7 +24,7 @@ replaceBuffer(input, 'dog', 'unicorn').toString();
 
 ## API
 
-### replaceBuffer(input, needle, replacement)
+### replaceBuffer(input, needle, replacement, [options])
 
 Returns a new `Buffer` with all needle matches replaced with replacement.
 
@@ -52,6 +52,17 @@ If a function, it receives the following arguments; the `needle`, the match coun
 replaceBuffer(Buffer.from('Foo Unicorn Bar'), 'Unicorn', (needle, matchCount, input) => `${needle}❤️`);
 //=> 'Foo Unicorn❤️ Bar'
 ```
+
+#### options
+
+Type: `Object`
+
+##### fromIndex
+
+Type: `number`<br>
+Default: `0`
+
+Index at which to start replacing.
 
 
 ## License

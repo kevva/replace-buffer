@@ -1,5 +1,5 @@
 'use strict';
-module.exports = (input, needle, replacement) => {
+module.exports = (input, needle, replacement, opts) => {
 	if (!Buffer.isBuffer) {
 		throw new TypeError(`Expected a Buffer, got ${typeof input}`);
 	}
@@ -8,10 +8,13 @@ module.exports = (input, needle, replacement) => {
 		return input;
 	}
 
+	opts = Object.assign({fromIndex: 0}, opts);
+
 	let matchCount = 0;
 
 	const fn = buf => {
-		const index = buf.indexOf(needle);
+		const fromIndex = matchCount === 0 ? opts.fromIndex : 0;
+		const index = buf.indexOf(needle, fromIndex);
 
 		if (index === -1) {
 			return buf;
