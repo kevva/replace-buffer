@@ -1,6 +1,6 @@
 {
 	"name": "replace-buffer",
-	"version": "1.0.0",
+	"version": "1.1.0",
 	"description": "Replace matches in a Buffer",
 	"license": "MIT",
 	"repository": "kevva/replace-buffer",
