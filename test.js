@@ -14,6 +14,21 @@ test('main', t => {
 	t.is(buf('foo', 'foo', 'bar', {fromIndex: -100}), 'bar');
 	t.is(buf('foo foo foo foo foo', 'foo', 'bar', {fromIndex: 1}), 'foo bar bar bar bar');
 	t.is(buf('bar foo', 'foo', 'bar', {fromIndex: 5}), 'bar foo');
+
+	t.is(
+		buf('My friend has a 🐑. I want a 🐑 too!', '🐑', '🦄'),
+		'My friend has a 🦄. I want a 🦄 too!'
+	);
+
+	t.is(
+		buf('foo bar baz foo baz', 'foo', '🦄'),
+		'🦄 bar baz 🦄 baz'
+	);
+
+	t.is(
+		buf('foo bar baz foo baz', 'foo', '🦄', {fromIndex: 5}),
+		'foo bar baz 🦄 baz'
+	);
 });
 
 test('function replacement', t => {

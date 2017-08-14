@@ -22,13 +22,13 @@ module.exports = (input, needle, replacement, opts) => {
 
 		matchCount++;
 
-		const replacer = Buffer.from(typeof replacement === 'string' ? replacement : replacement(needle, matchCount, input));
-
+		const replacementBuf = Buffer.from(typeof replacement === 'string' ? replacement : replacement(needle, matchCount, input));
+		const needleBuf = Buffer.from(needle);
 		const start = buf.slice(0, index);
-		const end = fn(buf.slice(index + needle.length));
-		const len = index + replacer.length + end.length;
+		const end = fn(buf.slice(index + needleBuf.length));
+		const len = index + replacementBuf.length + end.length;
 
-		return Buffer.concat([start, replacer, end], len);
+		return Buffer.concat([start, replacementBuf, end], len);
 	};
 
 	return fn(input);
