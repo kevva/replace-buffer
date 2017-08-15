@@ -1,6 +1,6 @@
 'use strict';
 module.exports = (input, needle, replacement, opts) => {
-	if (!Buffer.isBuffer) {
+	if (!Buffer.isBuffer(input)) {
 		throw new TypeError(`Expected a \`Buffer\`, got \`${typeof input}\``);
 	}
 

@@ -64,3 +64,7 @@ test('function replacement with fromIndex', t => {
 
 	t.deepEqual(indices, [1]);
 });
+
+test('throws on wrong input', t => {
+	t.throws(m.bind(null, 'foo'), 'Expected a `Buffer`, got `string`');
+});
