@@ -65,6 +65,11 @@ Default: `0`
 Index at which to start replacing.
 
 
+## Related
+
+* [splice-buffer](https://github.com/kevva/splice-buffer) - Remove or replace part of a `Buffer` like `Array#splice`
+
+
 ## License
 
 MIT © [Kevin Mårtensson](http://github.com/kevva)
